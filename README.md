@@ -1,3 +1,190 @@
+# ActiviTips
+
+A **Workout Generator and Tracker** web application that helps users create personalized workouts, log their exercises, and track weight progress—all while providing local weather insights.
+
+## Table of Contents
+- [ActiviTips](#activitips)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Structure](#structure)
+    - [Frontend](#frontend)
+    - [Backend](#backend)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Set Up the Backend](#2-set-up-the-backend)
+    - [3. Set Up the Frontend](#3-set-up-the-frontend)
+    - [4. Run the Tests](#4-run-the-tests)
+  - [Authors \& Acknowledgments](#authors--acknowledgments)
+
+---
+
+## Overview
+**ActiviTips** is designed to help users create and manage their workout plans with dynamically generated exercises. Users can track changes in their weight over time through a chart and gauge, and even check the local weather to plan outdoor workouts.
+
+---
+
+## Features
+- **User Authentication**  
+  - Sign up for a new account  
+  - Log in and log out securely  
+
+- **Weight Management**  
+  - Update and track weight changes  
+  - View weight history on a chart and gauge  
+
+- **Exercise Generation**  
+  - Choose a muscle group to generate exercises  
+  - Log exercises with details (loading, reps) to create a workout plan  
+
+- **Favorites & Dashboard**  
+  - “Favorite” a generated exercise and easily access it on your dashboard  
+  - Unfavorite exercises when they’re no longer needed  
+
+- **Weather Insights**  
+  - Enter a city or town to see local weather conditions  
+
+---
+
+## Structure
+
+### Frontend
+- **Technologies**: JavaScript, React, CSS, Bootstrap  
+- **Testing**: React Testing Library  
+- **Icons**:  
+  [![My Skills](https://skillicons.dev/icons?i=js,react,css,bootstrap)](https://skillicons.dev)
+
+### Backend
+- **Technologies**: Python, Flask, PostgreSQL  
+- **Testing**: Pytest  
+- **Icons**:  
+  [![My Skills](https://skillicons.dev/icons?i=python,flask,postgres)](https://skillicons.dev)
+
+---
+
+## Prerequisites
+You will need to:
+- **Generate a free API key** from [API Ninjas](https://api-ninjas.com) and add it to your backend `.env` file.  
+- **Generate a free API key** from [OpenWeather](https://openweathermap.org/api) and add it to your backend `.env` file.  
+- Ensure you have **Python**, **Node.js**, and **PostgreSQL** installed on your system.
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+```shell
+# Clone the repository
+git clone https://github.com/Dewi-Afoko/WeatherOrNot.git ProjectName
+
+# Change directory to the cloned repository
+cd ProjectName
+```
+### 2. Set Up the Backend
+```shell
+# Change directory to the backend folder
+cd backend
+
+# Set up the virtual environment
+python -m venv backend-venv
+
+# Activate the virtual environment (Mac/Linux)
+source backend-venv/bin/activate
+
+# (On Windows)
+backend-venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Create a test and development database
+createdb Activity_Tracker_TEST
+createdb Activity_Tracker_TEST_tEst
+
+# Optional: Open lib/database_connection.py to confirm or adjust database names
+open lib/database_connection.py
+
+# Create a .env file in the backend folder
+touch .env
+
+#Add the following to the .env file (adjust as needed):
+API_KEY="your_api_ninjas_key_here"
+OPENWEATHER_API_KEY="your_openweather_key_here"
+JWT_SECRET="your_secret_key"
+
+# Seed the SQL files into the database
+python seed_database.py
+
+# Run the app
+python app.py
+
+# Open your browser and visit:
+# http://localhost:5000/index
+```
+
+### 3. Set Up the Frontend
+```shell
+# Move back to the project root, then to the frontend folder
+cd ../frontend
+
+# Create an .env file in the frontend
+touch .env
+
+# Add the backend URL to your .env file
+echo 'VITE_BACKEND_URL="http://localhost:5000"' >> .env
+
+# Install frontend packages
+npm install
+
+# Run the frontend
+npm run dev
+
+# In your browser, visit:
+# http://localhost:5173/
+```
+
+### 4. Run the Tests
+Backend Tests:
+```shell
+# From your project's root directory, navigate to backend
+cd backend
+
+# Activate the virtual environment if needed
+source backend-venv/bin/activate
+
+# Run tests (with extra logging)
+pytest -sv
+```
+Frontend Tests:
+```shell
+# From your project's root directory, navigate to frontend
+cd frontend
+
+# Run the frontend tests
+npm test
+```
+## Authors & Acknowledgments
+
+This project was originally created as WeatherOrNot by a team during the Makers Software Development bootcamp. Special thanks to my original team members for their contributions:
+
+- **Chris Crook** ([@cajcrook](https://github.com/cajcrook))  
+
+- **Dewi Afoko** ([@Dewi-Afoko](https://github.com/Dewi-Afoko))  
+
+- **Edgar Valero** ([@edgarvalero23](https://github.com/edgarvalero23))
+
+- **Rebecca Clarke** ([Rclarkeweb](https://github.com/Rclarkeweb))
+
+---
+
+**Current Maintenance**:  
+Following the initial development, I ( [**@RobertMcIsaac**](https://github.com/RobertMcIsaac) ) am continuing to edit, fine-tune, add new features, and maintain the project. If you have any questions or ideas, feel free to open an issue or submit a pull request!
+
+
+
+
+<!-- 
 
 # WeatherOrNot
 
@@ -134,4 +321,4 @@ cd frontend
 
 # Run the tests
 npm test
-```
+``` -->

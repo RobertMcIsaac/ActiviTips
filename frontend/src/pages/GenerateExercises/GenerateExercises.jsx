@@ -13,7 +13,7 @@ import { getNewExercises } from "../../services/exercises";
 export function GenerateExercises() {
     const navigate = useNavigate();
 
-    const [choices, setChoices] = useState({'muscle': "", 'difficulty': "", 'equipment': ""})
+    // const [choices, setChoices] = useState({'muscle': "", 'difficulty': "", 'equipment': ""})
 
     // Managing state for exercises output
     const [exercises, setExercises] = useState([]);
@@ -120,10 +120,10 @@ export function GenerateExercises() {
                     <div className="selected-choices text-center p-3 mb-4 bg-light rounded shadow-sm">
                         <h4 className="mb-3 text-secondary">You Selected:</h4>
                         <Row>
-                            <Col xs={12} md={6} className="mb-2">
+                            <Col xs={12} md={5} className="mb-2">
                                 <strong>Muscle:</strong> {formatDisplayOutput(exercises[0].muscle)}
                             </Col>
-                            <Col xs={12} md={6} className="mb-2">
+                            <Col xs={12} md={5} className="mb-2">
                                 <strong>Difficulty:</strong> {formatDisplayOutput(exercises[0].difficulty)}
                             </Col>
                             {/* <Col xs={12} md={4} className="mb-2">
